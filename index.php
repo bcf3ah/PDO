@@ -7,6 +7,13 @@
  */
 
 
-require_once 'Database.php';
+require_once 'Model.php';
 
-$database = new Database();
+$database = new Model();
+
+$database->query("SELECT * FROM guests");
+$data = $database->resultset();
+
+echo '<pre>';
+print_r($data);
+echo '</pre>';
